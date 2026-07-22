@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>We Jigsaw — 데이터 안전(Data Safety) 양식 입력 가이드 (개발자용)</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">개인정보처리방침(메인)</a>
+  <header class="top">
+    <h1>We Jigsaw <span class="badge">개발자용 가이드</span></h1>
+    <div class="sub">Google Play Console — 데이터 안전(Data Safety) 양식 입력 가이드</div>
+  </header>
+  <p class="meta">패키지: <code>com.wejigsaw</code> · 최종 업데이트: 2026-07-22 · 이 페이지는 앱 등록자가 Play Console의 데이터 안전 양식을 채울 때 참고하는 내부 가이드입니다.</p>
+
+  <h2>0. 사전 체크</h2>
+  <ul>
+    <li>이 앱은 로컬(DataStore) 데이터 + Google AdMob(앱 오픈/배너)만 사용. 별도 분석/크래시 SDK 없음.</li>
+    <li>개인정보처리방침 URL(등록 필수): <code>https://wesoft80.github.io/jigsaw/</code></li>
+    <li>대상 사용자(별도 설문): <strong>13세 이상(일반)</strong>으로 설정 — 아동 대상 아님.</li>
+  </ul>
+
+  <h2>1. "필수 사용자 데이터 유형을 수집 또는 공유하나요?"</h2>
+  <p><strong>예(Yes)</strong> 선택.</p>
+
+  <h2>2. 선언할 데이터 유형 (각각 추가)</h2>
+  <p>아래 표의 항목을 "데이터 유형 추가"로 하나씩 등록하세요. 이 외 유형(이름/이메일/전화, 결제, 건강, 메시지, 연락처, 캘린더, 파일/문서, 웹 검색, 오디오 등)은 <strong>수집하지 않음</strong>으로 미선택.</p>
+  <table>
+    <tr><th>Play 데이터 유형</th><th>수집</th><th>공유</th><th>목적</th><th>비고</th></tr>
+    <tr><td>기기 또는 기타 ID<br><small>Device or other IDs</small></td><td>예</td><td>예</td><td>광고, 분석</td><td>광고 식별자(AdMob SDK 수집)</td></tr>
+    <tr><td>앱 활동 — 앱 상호작용<br><small>App activity — App interactions</small></td><td>예</td><td>예</td><td>광고, 분석</td><td>AdMob이 광고 측정용 수집</td></tr>
+    <tr><td>앱 정보 및 성능 — 충돌/진단/성능<br><small>App info and performance</small></td><td>예</td><td>예</td><td>분석, 광고</td><td>AdMob SDK가 진단 데이터 가능</td></tr>
+    <tr><td>대략적 위치(선택)<br><small>Approximate location</small></td><td>예</td><td>예</td><td>광고</td><td>위치 권한 미요청; AdMob이 IP 기반 대략적 위치 사용 가능. 과소 선언 방지용으로 포함 권장.</td></tr>
+    <tr><td>사진 및 동영상<br><small>Photos and videos</small></td><td>예</td><td>아니오</td><td>앱 기능</td><td>"내 사진" 퍼즐 — 시스템 사진 선택기로 가져와 기기 내부에만 저장(외부 전송 안 함)</td></tr>
+    <tr><td>앱 활동 — 기타 작업(게임 진행도)<br><small>App activity — Other actions</small></td><td>예</td><td>아니오</td><td>앱 기능</td><td>게임 진행도/설정/최고기록 — DataStore 로컬 저장(전송 안 함). 과소 선언 방지용 포함.</td></tr>
+  </table>
+
+  <h2>3. 각 유형별 세부 질문 답변</h2>
+  <ul>
+    <li><strong>공유(전송) 여부</strong>: 광고 관련 4개 유형(기기 ID/앱 상호작용/진단/대략적 위치) = <strong>예</strong>(Google/AdMob과 공유). 사진·게임 진행도 = <strong>아니오</strong>.</li>
+    <li><strong>임시 처리(ephemeral)</strong>: 모두 <strong>아니오</strong> — 데이터가 저장되거나 전송됨(임시 처리 아님).</li>
+    <li><strong>목적</strong>: 위 표의 "목적" 참고(광고·분석 / 앱 기능).</li>
+    <li><strong>사진·게임 진행도</strong>는 기기에만 저장되므로 "공유 아니오", "앱 기능" 목적.</li>
+  </ul>
+
+  <h2>4. 전송 중 암호화</h2>
+  <p><strong>예(Yes)</strong> — AdMob 통신은 HTTPS로 암호화됨.</p>
+
+  <h2>5. 사용자 데이터 삭제 요청</h2>
+  <p><strong>예(Yes)</strong> — 로컬 데이터는 앱 삭제(또는 앱 데이터 삭제)로 즉시 삭제됨; 광고 데이터는 Google 개인정보/광고 설정을 통해 관리 가능. (설명 란에 동일 내용 입력)</p>
+
+  <h2>6. 개인정보처리방침 URL</h2>
+  <p><code>https://wesoft80.github.io/jigsaw/</code> 입력. (Pages repo는 public 유지 — private 전환 시 URL 접근 불가로 반려.)</p>
+
+  <h2>7. 권한</h2>
+  <p><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code>, <code>VIBRATE</code> — 일반 권한으로 별도 선언 양식 불필요. 사진은 시스템 사진 선택기 사용 → 저장공간/카메라 권한 미요청.</p>
+
+  <h2>8. 제출 전 필수 (앱 단위)</h2>
+  <ul>
+    <li>AdMob 테스트 ID → 실제 앱 ID/광고단위 ID 교체(manifest, AppOpenAdManager, BannerAd). 테스트 ID 그대로 제출 시 광고 미노출 + AdMob 정책상 문제.</li>
+    <li>스테이지 이미지 저작권/라이선스 확인(풍경·애완동물 등).</li>
+    <li>릴리스 서명(keystore) + AAB 빌드.</li>
+  </ul>
+
+  <p class="meta">주의: 데이터 안전 양식은 <a href="./ko/">개인정보처리방침(한국어)</a>의 "데이터 안전(요약)" 표와 반드시 일치해야 반려를 피할 수 있습니다.</p>
+
+  <footer>© We Jigsaw. 개발자용 내부 가이드. GitHub Pages 호스팅.</footer>
+</div>
+</body>
+</html>
