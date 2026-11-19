@@ -99,6 +99,8 @@
     {"file": "stage41.jpg", "title": {"ko": "구름 양떼", "en": "Cloud Sheep Flock", "zh": "云中羊群", "hi": "बादल भेड़ झुंड", "es": "Rebaño de Nubes", "fr": "Troupeau de Moutons Nuages", "ar": "قطيع أغنام السحاب"}},
     {"file": "stage43.jpg", "title": {"ko": "사탕 판다", "en": "Candy Panda", "zh": "糖果熊猫", "hi": "कैंडी पांडा", "es": "Panda de Caramelo", "fr": "Panda Bonbon", "ar": "الباندا الحلوى"}},
     {"file": "stage44.jpg", "title": {"ko": "마법빗자루 검은고양이", "en": "Broomstick Black Cat", "zh": "魔法扫帚黑猫", "hi": "जादुई झाड़ू काली बिल्ली", "es": "Gato Negro Escoba Mágica", "fr": "Chat Noir Balai Magique", "ar": "قط أسود بمكنسة سحرية"}},
-    {"file": "stage46.jpg", "title": {"ko": "은하 햄스터", "en": "Galaxy Hamster", "zh": "银河仓鼠", "hi": "आकाशगंगा हैम्स्टर", "es": "Hámster Galáctico", "fr": "Hamster Galactique", "ar": "هامستر المجرة"}}
+    {"file": "stage46.jpg", "title": {"ko": "은하 햄스터", "en": "Galaxy Hamster", "zh": "银河仓鼠", "hi": "आकाशगंगा हैम्स्टर", "es": "Hámster Galáctico", "fr": "Hamster Galactique", "ar": "هامستر المجرة"}},
+    {"file": "stage99.jpg", "title": {"ko": "단풍 아래 아기곰", "en": "Bear Cub under the Maples", "zh": "枫树下的小熊", "hi": "मेपल के नीचे भालू का बच्चा", "es": "Osezno bajo los arces", "fr": "Ourson sous les érables", "ar": "دبّ صغير تحت أشجار القيقب"}},
+    {"file": "stage100.jpg", "title": {"ko": "사바나의 숫사자", "en": "Lion of the Savanna", "zh": "草原雄狮", "hi": "सवाना का शेर", "es": "León de la sabana", "fr": "Lion de la savane", "ar": "أسد السافانا"}}
   ]
 }
